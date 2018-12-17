@@ -7,11 +7,11 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="491.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.AsientoContable">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="491.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.AsientoContable">
    <children>
-      <Button layoutX="266.0" layoutY="39.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="146.0" text="Agregar Asiento" />
-      <ComboBox layoutX="37.0" layoutY="132.0" prefHeight="25.0" prefWidth="209.0" />
-      <ComboBox layoutX="37.0" layoutY="167.0" prefHeight="25.0" prefWidth="209.0" />
+      <Button fx:id="btnAsiento" layoutX="266.0" layoutY="39.0" mnemonicParsing="false" onAction="#agregarAsiento" prefHeight="25.0" prefWidth="146.0" text="Agregar Asiento" />
+      <ComboBox fx:id="cmbAsiento1" layoutX="37.0" layoutY="132.0" prefHeight="25.0" prefWidth="209.0" />
+      <ComboBox fx:id="cmbAsiento2" layoutX="37.0" layoutY="167.0" prefHeight="25.0" prefWidth="209.0" />
       <Label layoutX="112.0" layoutY="97.0" prefHeight="25.0" prefWidth="58.0" text="Cuentas">
          <font>
             <Font size="16.0" />
@@ -31,18 +31,24 @@
             <Font size="16.0" />
          </font>
       </Label>
-      <TextField layoutX="528.0" layoutY="132.0" prefHeight="25.0" prefWidth="58.0" />
+      <TextField fx:id="txtFecha" layoutX="528.0" layoutY="132.0" prefHeight="25.0" prefWidth="58.0" />
       <Label layoutX="528.0" layoutY="97.0" prefHeight="25.0" prefWidth="58.0" text="Fecha">
          <font>
             <Font size="16.0" />
          </font>
       </Label>
-      <Button layoutX="418.0" layoutY="411.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="146.0" text="Agregar SubCuenta" />
-      <Button layoutX="227.0" layoutY="411.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="146.0" text="Agregar Cuenta" />
-      <TextField layoutX="389.0" layoutY="280.0" prefHeight="25.0" prefWidth="81.0" />
-      <TextField layoutX="277.0" layoutY="280.0" prefHeight="25.0" prefWidth="92.0" />
-      <Button layoutX="491.0" layoutY="280.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="105.0" text="Guardar" />
-      <Button layoutX="37.0" layoutY="39.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="81.0" text="Anterior" />
+      <Button fx:id="btnSubCuenta" layoutX="418.0" layoutY="411.0" mnemonicParsing="false" onAction="#agregarSubCuenta" prefHeight="25.0" prefWidth="146.0" text="Agregar SubCuenta" />
+      <Button fx:id="btnCuenta" layoutX="227.0" layoutY="411.0" mnemonicParsing="false" onAction="#agregarCuenta" prefHeight="25.0" prefWidth="146.0" text="Agregar Cuenta" />
+      <TextField fx:id="txtHaber" layoutX="389.0" layoutY="280.0" prefHeight="25.0" prefWidth="81.0" />
+      <TextField fx:id="txtDebe" layoutX="277.0" layoutY="280.0" prefHeight="25.0" prefWidth="92.0" />
+      <Button fx:id="btnGuardar" layoutX="491.0" layoutY="280.0" mnemonicParsing="false" onAction="#guardar" prefHeight="25.0" prefWidth="105.0" text="Guardar" />
+      <Button fx:id="btnSalir" layoutX="37.0" layoutY="39.0" mnemonicParsing="false" onAction="#salir" prefHeight="25.0" prefWidth="81.0" text="Salir" />
       <Button layoutX="149.0" layoutY="39.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="81.0" text="+" />
+      <TextField fx:id="txtId" layoutX="515.0" layoutY="52.0" prefHeight="25.0" prefWidth="58.0" />
+      <Label layoutX="481.0" layoutY="52.0" prefHeight="25.0" prefWidth="21.0" text="ID">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

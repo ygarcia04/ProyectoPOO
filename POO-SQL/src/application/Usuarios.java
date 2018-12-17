@@ -1,7 +1,5 @@
 package application;
 
-import java.sql.SQLException;
-
 public class Usuarios {
 	private int idUsuario;
 	private String nombreUsuario;
@@ -49,10 +47,4 @@ public class Usuarios {
 	public void setPrivilegios(int privilegios) {
 		this.privilegios = privilegios;
 	}
-	
-	/*public void GuardarUsuario()throws SQLException {
-		Conexion conexion = new Conexion();
-		conexion.GuardarUsuario("insert into public.\"Usuarios\"(\"idUsuario\", \"nombreUsuario\", \"password\", \"privilegio\") \r\n" + 
-        		"values(7, 'usuario12', 'user1234', 1);");
-	}*/
 }

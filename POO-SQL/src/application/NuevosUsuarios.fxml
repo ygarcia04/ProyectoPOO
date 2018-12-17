@@ -10,19 +10,19 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="491.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.ControlPrincipal">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="491.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Registro">
    <children>
       <ButtonBar layoutX="418.0" layoutY="455.0" prefHeight="22.0" prefWidth="114.0" />
-      <Button layoutX="443.0" layoutY="294.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="143.0" text="Guardar" />
+      <Button fx:id="btnGuardar" layoutX="443.0" layoutY="294.0" mnemonicParsing="false" onAction="#guardar" prefHeight="32.0" prefWidth="143.0" text="Guardar" />
       <ImageView fitHeight="92.0" fitWidth="91.0" layoutX="247.0" layoutY="3.0">
          <image>
             <Image url="@../logos-UNAH-11.png" />
          </image>
       </ImageView>
       <TextArea layoutX="16.0" layoutY="352.0" prefHeight="125.0" prefWidth="573.0" />
-      <TextField layoutX="144.0" layoutY="95.0" prefHeight="32.0" prefWidth="392.0" />
-      <TextField layoutX="144.0" layoutY="147.0" prefHeight="32.0" prefWidth="392.0" />
-      <TextField layoutX="144.0" layoutY="202.0" prefHeight="32.0" prefWidth="392.0" />
+      <TextField fx:id="txtNombre" layoutX="144.0" layoutY="95.0" prefHeight="32.0" prefWidth="392.0" />
+      <TextField fx:id="txtPassword" layoutX="144.0" layoutY="147.0" prefHeight="32.0" prefWidth="392.0" />
+      <TextField fx:id="txtidUsuario" layoutX="144.0" layoutY="202.0" prefHeight="32.0" prefWidth="392.0" />
       <Label layoutX="50.0" layoutY="95.0" prefHeight="32.0" prefWidth="70.0" text="Nombre">
          <font>
             <Font size="15.0" />
@@ -38,13 +38,13 @@
             <Font size="15.0" />
          </font>
       </Label>
-      <Button layoutX="16.0" layoutY="14.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="81.0" text="Nuevo" />
-      <Button layoutX="267.0" layoutY="294.0" mnemonicParsing="false" onAction="#esenaAsientoContble" prefHeight="32.0" prefWidth="143.0" text="Mostrar Usuarios " />
+      <Button fx:id="btnNuevo" layoutX="16.0" layoutY="14.0" mnemonicParsing="false" onAction="#nuevo" prefHeight="25.0" prefWidth="81.0" text="Nuevo" />
+      <Button fx:id="btnMostrar" layoutX="267.0" layoutY="294.0" mnemonicParsing="false" onAction="#mostrar" prefHeight="32.0" prefWidth="143.0" text="Mostrar Usuarios " />
       <Label layoutX="50.0" layoutY="246.0" prefHeight="32.0" prefWidth="70.0" text="Privilegios">
          <font>
             <Font size="15.0" />
          </font>
       </Label>
-      <TextField layoutX="144.0" layoutY="246.0" prefHeight="32.0" prefWidth="49.0" />
+      <TextField fx:id="txtPrivilegio" layoutX="144.0" layoutY="246.0" prefHeight="32.0" prefWidth="49.0" />
    </children>
 </AnchorPane>

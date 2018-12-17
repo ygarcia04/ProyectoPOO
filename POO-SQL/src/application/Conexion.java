@@ -8,6 +8,9 @@ import java.sql.Statement;
 
 import javax.swing.JOptionPane;
 
+import javafx.scene.control.ComboBox;
+import javafx.scene.control.ComboBoxBase;
+
 public class Conexion {
 	private static String user="postgres";
 	private static String pass="postgres";
@@ -32,11 +35,11 @@ public class Conexion {
 		try {
             Statement st = getConnection().createStatement(); // Objeto Statement
             
-            ResultSet rs = st.executeQuery(query); // Objeto Resulset
+            ResultSet rs = st.executeQuery(query);//("select * from public.\"Usuarios\"")); // Objeto Resulset
             
             // Recorre todos los elemento de la tabla
             while(rs.next()){
-                System.out.println(rs.getString(1)+rs.getString(2)+ rs.getString(3)); // Obtener valor
+                System.out.println(rs.getString(1)+" "+rs.getString(2)); // Obtener valor
             }
             
         } catch (Exception ex) {
@@ -48,13 +51,10 @@ public class Conexion {
 		try {
             Statement st = getConnection().createStatement(); // Objeto Statement    
             st.executeQuery(query); // Objeto Resulset
-            System.out.println("Registrado correctamente");
+            	JOptionPane.showMessageDialog(null,"Usuario registrado correctamente");
 		 } catch(SQLException e){
-	            JOptionPane.showMessageDialog(null,"El usuario ya existe");
-
-	        } catch(ClassNotFoundException e){
-	            JOptionPane.showMessageDialog(null,"Error inesperado");
-	    } 
+	     } catch(ClassNotFoundException e){
+	     } 
 		
 		catch (Exception e) {
 		} 
@@ -68,7 +68,7 @@ public class Conexion {
         	ResultSet rs = st.executeQuery("select * from public.\"Usuarios\" where \"idUsuario\" = '"+idUsuario+"' and password = '"+password+"'"); // Objeto Resulset
             
             while(rs.next()){
-            	if(rs.getRow()>0) 
+            	if(rs.getRow()>0)//Obtiene el numero de filas q encontro 
             		existe=true;
             	else
             		existe=false;       	
@@ -78,6 +78,20 @@ public class Conexion {
             System.out.println("error aqui en verificar");
         }
 		return existe;
+	}
+	public ComboBoxBase listarCuentas() throws SQLException{
+		ComboBox listar = null;
+		
+		try {
+            Statement st = getConnection().createStatement(); // Objeto Statement 
+        	ResultSet rs = st.executeQuery("select * from public.\"Cuenta\" order by idcuenta asc;"); // Objeto Resulset           
+        	while(rs.next()){
+                System.out.println(rs.getString(1)+" "+rs.getString(2));
+        	}
+		} catch (Exception ex) {
+            System.out.println("error aqui en verificar");
+        }
+		return listar;
 	}
 }
 

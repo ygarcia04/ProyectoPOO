@@ -5,39 +5,24 @@ import javafx.stage.StageStyle;
 import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
 import javafx.fxml.FXMLLoader;
+
 public class Main extends Application {
-	
-	
-	private Scene asientoContable;
-	private Scene partidaDoble;
-	private Scene registro;
-	private Scene balanceGeneral;
-	private Scene estadoResultados;
-	private Scene nuevoUsuario;
-	private Scene listaUsuarios;
-	
+		
 	private Stage principal;
 	private Stage interfasControl;
-	
 	private ControlAcceso controlAcceso;
-	private AsientoContable controlContable;
-	private BalanceGeneral controlGeneral;
-	private EstadoResultados controlResultados;
-	private ListaUsuarios controlUsuarios;
-	private NuevoUsuarios controlUsuariosN;
-	private Registro controlRegistro;
-	private PartidaDoble controlDoble;
-	
-	public Stage getPrincipal() {
-		return principal;
-	}
+		
 	public void setPrincipal(Stage principal) {
 		this.principal = principal;
 	}
-	
-	
-	
-	public void start(Stage acceso) {
+		
+	public Stage getPrincipal() {
+		return principal;
+	}
+
+
+
+	public void VentanaPrincipal(Stage acceso) {
 		principal=acceso;
 		interfasControl=acceso;
 		try {
@@ -55,7 +40,7 @@ public class Main extends Application {
 			e.printStackTrace();
 		}
 	}
-	public void abrirPrincipa() {
+	public void abrirPrincipal() {
 		try {
 			interfasControl= new Stage();
 			FXMLLoader loader = new FXMLLoader();
@@ -70,23 +55,14 @@ public class Main extends Application {
 		}
 		interfasControl.show();
 	}
-	public void esenaAsientoContable(){
-		try {
-			FXMLLoader loader = new FXMLLoader();
-			loader.setLocation(getClass().getResource("AsientoContable.fxml"));
-			AnchorPane root = (AnchorPane)loader.load();
-			asientoContable = new Scene(root);
-			interfasControl.setScene(asientoContable);
-			controlContable = loader.getController();
-			controlContable.setMain(this);
-			
-			} catch(Exception e) {
-				e.printStackTrace();
-			}
-		
-	}
-	
+
 	public static void main(String[] args) {
 		launch(args);
+	}
+
+	@Override
+	public void start(Stage primaryStage) throws Exception {
+		VentanaPrincipal(primaryStage);
+		
 	}
 }

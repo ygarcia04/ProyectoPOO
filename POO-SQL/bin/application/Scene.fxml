@@ -7,19 +7,20 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="491.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.ControlPrincipal">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="491.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.ControlPrincipal">
    <children>
       <TextArea layoutX="7.0" layoutY="319.0" prefHeight="150.0" prefWidth="587.0" text="           .---.        .-&quot;-. &#10;         /   6_6    / 4 4 \&#10;         \_  (__\    \_ v _/&#10;         //   \\      //   \\&#10;        ((     ))      ((     ))&#10;  =======&quot;&quot;===&quot;&quot;========SQL-POO=======&#10;           |||            |||&#10;            |              |" />
-      <Button layoutX="14.0" layoutY="189.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="143.0" text="Estado de Resultado" />
+      <Button layoutX="14.0" layoutY="180.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="143.0" text="Estado de Resultado" />
       <ButtonBar layoutX="418.0" layoutY="455.0" prefHeight="22.0" prefWidth="114.0" />
-      <Button layoutX="14.0" layoutY="23.0" mnemonicParsing="false" onAction="#esenaAsientoContble" prefHeight="32.0" prefWidth="143.0" text="Asiento Contable" />
+      <Button fx:id="btnAsiento" layoutX="14.0" layoutY="23.0" mnemonicParsing="false" onAction="#escenaAsientoContable" prefHeight="32.0" prefWidth="143.0" text="Asiento Contable" />
       <Button layoutX="14.0" layoutY="78.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="143.0" text="Partida Doble" />
-      <Button layoutX="14.0" layoutY="246.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="143.0" text="Nuevo Usuario" />
+      <Button fx:id="btnActualizar" layoutX="14.0" layoutY="230.0" mnemonicParsing="false" onAction="#Usuarios" prefHeight="32.0" prefWidth="143.0" text="Nuevo Usuario" />
       <Button layoutX="14.0" layoutY="132.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="143.0" text="Balance General" />
       <ImageView fitHeight="336.0" fitWidth="339.0" layoutX="210.0" layoutY="2.0">
          <image>
             <Image url="@../logos-UNAH-11.png" />
          </image>
       </ImageView>
+      <Button fx:id="btnSalir" layoutX="14.0" layoutY="280.0" mnemonicParsing="false" onAction="#salir" prefHeight="32.0" prefWidth="143.0" text="Salir" />
    </children>
 </AnchorPane>
