@@ -5,11 +5,9 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-
 import javax.swing.JOptionPane;
-
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.ComboBoxBase;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 
 public class Conexion {
 	private static String user="postgres";
@@ -17,7 +15,8 @@ public class Conexion {
 	private static java.sql.Connection conexion;
 	private static String urlDatabase =  "jdbc:postgresql://localhost:5432/Contabilidad";
 	private static String driver="org.postgresql.Driver";
-
+	
+	
 	public java.sql.Connection getConnection() throws Exception{
 		try {
 			Class.forName(driver);
@@ -51,7 +50,7 @@ public class Conexion {
 		try {
             Statement st = getConnection().createStatement(); // Objeto Statement    
             st.executeQuery(query); // Objeto Resulset
-            	JOptionPane.showMessageDialog(null,"Usuario registrado correctamente");
+            	JOptionPane.showMessageDialog(null,"Registrado correctamente");
 		 } catch(SQLException e){
 	     } catch(ClassNotFoundException e){
 	     } 
@@ -79,19 +78,20 @@ public class Conexion {
         }
 		return existe;
 	}
-	public ComboBoxBase listarCuentas() throws SQLException{
-		ComboBox listar = null;
+	public ObservableList<String> listarCuentas() throws SQLException{
+		ObservableList<String> datos = FXCollections.observableArrayList();
 		
 		try {
             Statement st = getConnection().createStatement(); // Objeto Statement 
         	ResultSet rs = st.executeQuery("select * from public.\"Cuenta\" order by idcuenta asc;"); // Objeto Resulset           
         	while(rs.next()){
-                System.out.println(rs.getString(1)+" "+rs.getString(2));
+        		datos.addAll(rs.getString(1)+" "+rs.getString(2));
         	}
 		} catch (Exception ex) {
             System.out.println("error aqui en verificar");
         }
-		return listar;
+		
+		return datos;
 	}
 }
 

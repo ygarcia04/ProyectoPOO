@@ -11,7 +11,7 @@
    <children>
       <Button fx:id="btnAsiento" layoutX="266.0" layoutY="39.0" mnemonicParsing="false" onAction="#agregarAsiento" prefHeight="25.0" prefWidth="146.0" text="Agregar Asiento" />
       <ComboBox fx:id="cmbAsiento1" layoutX="37.0" layoutY="132.0" onAction="#Cuentas" prefHeight="25.0" prefWidth="209.0" />
-      <ComboBox fx:id="cmbAsiento2" layoutX="37.0" layoutY="167.0" prefHeight="25.0" prefWidth="209.0" />
+      <ComboBox fx:id="cmbAsiento2" layoutX="37.0" layoutY="167.0" onAction="#Cuentas2" prefHeight="25.0" prefWidth="209.0" />
       <Label layoutX="112.0" layoutY="97.0" prefHeight="25.0" prefWidth="58.0" text="Cuentas">
          <font>
             <Font size="16.0" />
